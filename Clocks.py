@@ -1,0 +1,64 @@
+from Card import CardDeck, Card
+from Player import Player
+from Server import Server
+import time
+
+class Clocks:
+    def __init__(self, player_names, cards_per_player):
+        self.server = Server()
+        self.shownClock = [Card('Hidden','Hidden') for i in range(12)]
+        self.createPlayers(player_names)
+        self.setup(cards_per_player)
+        self.currentTime = 0
+
+    def setup(self, cards_per_player):
+        self.deck = CardDeck()
+        self.deck.shuffle()
+        self.createClock()
+        self.dealHands(cards_per_player)
+        self.server.setGameState(self.shownClock)
+        self.server.setPlayers(self.players)
+        self.server.run() # TODO: Put in its own thread
+
+    def createPlayers(self, player_names):
+        self.players = []
+        counter = 0
+        for name in player_names:
+            player = Player(counter, name)
+            self.players.append(player)
+
+    def createClock(self):
+        self.clock = []
+        for i in range(12):
+            card = self.deck.drawCard()
+            self.clock.append(card)
+
+    def revealNextClock(self):
+        self.shownClock[self.currentTime] = self.clock[self.currentTime]
+        self.currentTime += 1
+
+    def printShownClock(self):
+        print("Current clock")
+        for card in self.shownClock:
+            print(card.getValue(), " of ", card.getSuit())
+
+    def getShownClock(self):
+        return self.shownClock
+
+    def dealHands(self, cards_per_player):
+        for player in self.players:
+            for i in range(cards_per_player):
+                card = self.deck.drawCard()
+                player.giveCard(card)
+            print("Player Name: ", player.getName())
+            player.printHand()
+
+
+if __name__ == '__main__':
+    player_names = ['Scott', 'Tyler', 'Zamin', 'Tom']
+    cards_per_player = 6
+    clocks = Clocks(player_names, cards_per_player)
+    for i in range(12):
+        clocks.revealNextClock()
+        clocks.printShownClock()
+        time.sleep(1)
