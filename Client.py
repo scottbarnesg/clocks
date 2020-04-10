@@ -7,10 +7,10 @@ class Client:
 
 
     def connect(self):
-        TCP_IP = '108.45.131.165'
+        TCP_IP = '127.0.0.1'
         TCP_PORT = 60001
         BUFFER_SIZE = 1024
-        MESSAGE = "Connection Request"
+        MESSAGE = input("Connection Request")
         self.s.connect((TCP_IP, TCP_PORT))
         self.s.send(MESSAGE)
         data = self.s.recv(BUFFER_SIZE)
@@ -26,3 +26,8 @@ class Client:
 
 
         self.s.close()
+
+if __name__ == "__main__":
+    client = Client()
+    client.connect()
+    client.run()
