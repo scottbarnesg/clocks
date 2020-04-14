@@ -71,7 +71,7 @@ def getImageLink(card):
     print(lookup)
     if lookup in links:
         return "/static/img/" + links[lookup]
-    return None
+    return "/static/img/back.png"
 
 def cardsToImages(cards):
     images = []
@@ -160,10 +160,9 @@ class Server:
 app = Flask(__name__, static_url_path='/static')
 @app.route('/Player1', methods=['GET'])
 def serve_player1():
-    # hand = gamePlayers[0].cards
     hand = cardsToImages(gamePlayers[0].cards)
-    print(hand)
-    clock = gameState
+    # clock = gameState
+    clock = cardsToImages(gameState)
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )
     else:
@@ -171,7 +170,7 @@ def serve_player1():
 
 @app.route('/Player2', methods=['GET'])
 def serve_player2():
-    hand = gamePlayers[1].cards
+    hand = cardsToImages(gamePlayers[1].cards)
     clock = gameState
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )
@@ -180,7 +179,7 @@ def serve_player2():
 
 @app.route('/Player3', methods=['GET'])
 def serve_player3():
-    hand = gamePlayers[2].cards
+    hand = cardsToImages(gamePlayers[2].cards)
     clock = gameState
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )
@@ -189,7 +188,7 @@ def serve_player3():
 
 @app.route('/Player4', methods=['GET'])
 def serve_player4():
-    hand = gamePlayers[3].cards
+    hand = cardsToImages(gamePlayers[3].cards)
     clock = gameState
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )
@@ -198,7 +197,7 @@ def serve_player4():
 
 @app.route('/Player5', methods=['GET'])
 def serve_player5():
-    hand = gamePlayers[4].cards
+    hand = cardsToImages(gamePlayers[4].cards)
     clock = gameState
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )
@@ -207,7 +206,7 @@ def serve_player5():
 
 @app.route('/Player6', methods=['GET'])
 def serve_player6():
-    hand = gamePlayers[5].cards
+    hand = cardsToImages(gamePlayers[5].cards)
     clock = gameState
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )
@@ -216,7 +215,7 @@ def serve_player6():
 
 @app.route('/', methods=['GET'])
 def serve_player():
-    hand = gamePlayers[0].cards
+    hand = cardsToImages(gamePlayers[0].cards)
     clock = gameState
     if showPlayerHands:
         return render_template('hand.html', hand=hand, )

@@ -61,7 +61,7 @@ if __name__ == '__main__':
     cards_per_player = 5
     clocks = Clocks(player_names, cards_per_player)
     print("Waiting for clients to connect...")
-    time.sleep(30)
+    time.sleep(10)
     clocks.server.showPlayerHands(False)
     for i in range(12):
         clocks.revealNextClock()
