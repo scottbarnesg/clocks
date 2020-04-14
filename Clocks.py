@@ -57,20 +57,20 @@ class Clocks:
 
 
 if __name__ == '__main__':
-    player_names = ['Scott', 'Tyler', 'Zamin', 'Tom']
-    cards_per_player = 6
+    player_names = ['Scott', 'Tyler', 'Zamin', 'Tom', 'Sam', 'Tylers Brother']
+    cards_per_player = 5
     clocks = Clocks(player_names, cards_per_player)
     print("Waiting for clients to connect...")
-    time.sleep(60)
+    time.sleep(30)
     clocks.server.showPlayerHands(False)
     for i in range(12):
         clocks.revealNextClock()
         clocks.printShownClock()
-        time.sleep(60)
+        time.sleep(5)
 
     # Everyone says their cards:
     print("Everyone says their cards")
-    time.sleep(120)
+    time.sleep(10)
     clocks.server.showPlayerHands(True)
     time.sleep(10)
     # Shut down clients
