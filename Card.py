@@ -2,7 +2,7 @@ import random
 
 class CardDeck:
     def __init__(self):
-      self.suits = ['hearts','diamonds','spades','clubs']
+      self.suits = ['Hearts','Diamonds','Spades','Clubs']
       self.values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'Jack', 'Queen', 'King', 'Ace']
       self.cards = []
       self.generateDeck()
