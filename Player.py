@@ -17,4 +17,5 @@ class Player:
     def getNumber(self):
         return self.number
 
-    
+    def getCards(self):
+        return self.cards

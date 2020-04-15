@@ -212,14 +212,18 @@ def serve_player6():
     else:
         return render_template('clock.html', clock=clock)
 
-@app.route('/', methods=['GET'])
-def serve_player():
-    hand = cardsToImages(gamePlayers[0].cards)
-    clock = cardsToImages(gameState)
-    if showPlayerHands:
-        return render_template('hand.html', hand=hand, )
-    else:
-        return render_template('clock.html', clock=clock)
+@app.route('/admin', methods=['GET'])
+def serve_admin():
+    playerCards = []
+    for player in gamePlayers:
+        cardList = []
+        for card in player.getCards():
+            cardName = card.getValue() + ' of ' + card.getSuit()
+            cardList.append(str(cardName))
+        playerCards.append(cardList)
+    print("playerCards:")
+    print(playerCards)
+    return render_template('admin.html', players=playerCards)
 
 def run_flask():
     addr = '0.0.0.0'
