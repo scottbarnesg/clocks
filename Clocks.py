@@ -73,10 +73,10 @@ if __name__ == '__main__':
     for i in range(12):
         clocks.revealNextClock()
         counter = 0
-        while(counter < interCardDelay):
-            counter += 1
-            clocks.server.setTimer(interCardDelay-counter)
-            time.sleep(1)
+        userInput = "no"
+        while(userInput != "next"):
+            print("Type 'next' to go to the next card: ")
+            userInput = Input()
 
 
     # Everyone says their cards:
