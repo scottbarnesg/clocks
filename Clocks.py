@@ -61,7 +61,7 @@ if __name__ == '__main__':
     cards_per_player = 5
     clocks = Clocks(player_names, cards_per_player)
     print("Waiting for clients to connect...")
-    preGameDuration = 180
+    preGameDuration = 18
     counter = 0
     while(counter < preGameDuration):
         counter += 1
@@ -76,7 +76,7 @@ if __name__ == '__main__':
         userInput = "no"
         while(userInput != "next"):
             print("Type 'next' to go to the next card: ")
-            userInput = Input()
+            userInput = input()
 
 
     # Everyone says their cards:

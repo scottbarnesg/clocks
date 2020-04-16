@@ -15,12 +15,10 @@
     document.getElementById("Clock3").setAttribute("src", '{{ clock[2] }}');
     document.getElementById("Clock2").setAttribute("src", '{{ clock[1] }}');
     document.getElementById("Clock1").setAttribute("src", '{{ clock[0] }}');
-    document.getElementById("Timer").innerHTML = "Time to next card: " + '{{ time }}' + ' seconds';
   }
 </script>
 </head>
 <body onload=getClock()>
-  <h3 id="Timer"><h3>
   <div style="display:table:cell; text-align:center;">
     <img height="110" id="Clock12"></img>
   </div>
