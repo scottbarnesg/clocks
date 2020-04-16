@@ -9,6 +9,9 @@ Google Chrome is the recommended browser. Both Chrome and Firefox are supported.
 * Flask
 
 ## How to Play
+### Rules:
+The game's rules are here, courtesy of Zamin Raza: https://github.com/scottbarnesg/clocks/blob/master/docs/Rules%20and%20Regs.pdf
+### Stages:
 1. A link will be provided to you by the server administrator. Go to this link in a supported web browser.
 2. You will be shown a set of cards. This is your hand, which you must memorize. There is a countdown displayed under the cards, which indicates how much time you have until the game starts. When the game starts, you will no longer be able to see your hand.
 ![image](https://github.com/scottbarnesg/clocks/blob/master/images/Hand.png)
