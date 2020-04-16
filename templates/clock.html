@@ -15,36 +15,37 @@
     document.getElementById("Clock3").setAttribute("src", '{{ clock[2] }}');
     document.getElementById("Clock2").setAttribute("src", '{{ clock[1] }}');
     document.getElementById("Clock1").setAttribute("src", '{{ clock[0] }}');
+    document.getElementById("Timer").innerHTML = "Time to next card: " + '{{ time }}' + ' seconds';
   }
 </script>
 </head>
 <body onload=getClock()>
-  <h1>The Clock:</h1>
+  <h3 id="Timer"><h3>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" id="Clock12"></img>
+    <img height="120" id="Clock12"></img>
   </div>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" style="margin: 0px 50px" id="Clock11"></img>
-    <img height="150" style="margin: 0px 50px" id="Clock1"></img>
+    <img height="120" style="margin: 0px 50px" id="Clock11"></img>
+    <img height="120" style="margin: 0px 50px" id="Clock1"></img>
   </div>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" style="margin: 0px 100px" id="Clock10"></img>
-    <img height="150" style="margin: 0px 100px" id="Clock2"></img>
+    <img height="120" style="margin: 0px 100px" id="Clock10"></img>
+    <img height="120" style="margin: 0px 100px" id="Clock2"></img>
   </div>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" style="margin: 0px 150px" id="Clock9"></img>
-    <img height="150" style="margin: 0px 150px" id="Clock3"></img>
+    <img height="120" style="margin: 0px 150px" id="Clock9"></img>
+    <img height="120" style="margin: 0px 150px" id="Clock3"></img>
   </div>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" style="margin: 0px 100px" id="Clock8"></img>
-    <img height="150" style="margin: 0px 100px" id="Clock4"></img>
+    <img height="120" style="margin: 0px 100px" id="Clock8"></img>
+    <img height="120" style="margin: 0px 100px" id="Clock4"></img>
   </div>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" style="margin: 0px 50px" id="Clock7"></img>
-    <img height="150" style="margin: 0px 50px" id="Clock5"></img>
+    <img height="120" style="margin: 0px 50px" id="Clock7"></img>
+    <img height="120" style="margin: 0px 50px" id="Clock5"></img>
   </div>
   <div style="display:table:cell; text-align:center;">
-    <img height="150" id="Clock6"></img>
+    <img height="120" id="Clock6"></img>
   </div>
   </div>
 </body>

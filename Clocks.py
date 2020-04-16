@@ -61,18 +61,29 @@ if __name__ == '__main__':
     cards_per_player = 5
     clocks = Clocks(player_names, cards_per_player)
     print("Waiting for clients to connect...")
-    time.sleep(10)
+    preGameDuration = 180
+    counter = 0
+    while(counter < preGameDuration):
+        counter += 1
+        clocks.server.setTimer(preGameDuration-counter)
+        time.sleep(1)
+
     clocks.server.showPlayerHands(False)
+    interCardDelay = 60
     for i in range(12):
         clocks.revealNextClock()
-        clocks.printShownClock()
-        time.sleep(5)
+        counter = 0
+        while(counter < interCardDelay):
+            counter += 1
+            clocks.server.setTimer(interCardDelay-counter)
+            time.sleep(1)
+
 
     # Everyone says their cards:
     print("Everyone says their cards")
-    time.sleep(10)
+    time.sleep(120)
     clocks.server.showPlayerHands(True)
-    time.sleep(10)
+    time.sleep(30)
     # Shut down clients
     print("Ending game...")
     clocks.server.sendShutdown()

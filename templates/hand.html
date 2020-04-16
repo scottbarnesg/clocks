@@ -3,35 +3,12 @@
 <meta http-equiv="refresh" content="5" >
 <script>
   function getHand(){
-    /*var handValues = ['{{ hand[0].value }}', '{{ hand[1].value }}', '{{ hand[2].value }}', '{{ hand[3].value }}', '{{ hand[4].value }}']
-    var handSuits = ['{{ hand[0].suit }}', '{{ hand[1].suit }}', '{{ hand[2].suit }}', '{{ hand[3].suit }}', '{{ hand[4].suit }}']
-    var body = document.getElementsByTagName('body')[0]
-    var handLen = handValues.length;
-    */
-    /*for (var i=0; i<handLen; i++){
-      var cardValue = hand[i].value;
-      newCard = document.creatElement('h3');
-      newCard.id = 'card' + i;
-      body.appendChild(newCard);
-      document.getElementById(newCard.id).innerHTML = '{{ hand[0].value }}';
-    }*/
-    /*
-    document.getElementById("Value0").innerHTML = '{{ hand[0].value }}';
-    document.getElementById("Suit0").innerHTML = '{{ hand[0].suit }}';
-    document.getElementById("Value1").innerHTML = '{{ hand[1].value }}';
-    document.getElementById("Suit1").innerHTML = '{{ hand[1].suit }}';
-    document.getElementById("Value2").innerHTML = '{{ hand[2].value }}';
-    document.getElementById("Suit2").innerHTML = '{{ hand[2].suit }}';
-    document.getElementById("Value3").innerHTML = '{{ hand[3].value }}';
-    document.getElementById("Suit3").innerHTML = '{{ hand[3].suit }}';
-    document.getElementById("Value4").innerHTML = '{{ hand[4].value }}';
-    document.getElementById("Suit4").innerHTML = '{{ hand[4].suit }}';
-    */
     document.getElementById("card0").setAttribute("src", '{{ hand[0] }}');
     document.getElementById("card1").setAttribute("src", '{{ hand[1] }}');
     document.getElementById("card2").setAttribute("src", '{{ hand[2] }}');
     document.getElementById("card3").setAttribute("src", '{{ hand[3] }}');
     document.getElementById("card4").setAttribute("src", '{{ hand[4] }}');
+    document.getElementById("Timer").innerHTML = "Time to game starting: " + '{{ time }}' + ' seconds';
   }
 </script>
 </head>
@@ -42,4 +19,5 @@
   <img id="card2">
   <img id="card3">
   <img id="card4">
+  <h1 id="Timer"><h1>
 <html>
