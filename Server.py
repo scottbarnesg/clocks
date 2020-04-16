@@ -61,7 +61,7 @@ links = {
     "King Hearts": "KH.png",
     "King Spades": "KS.png",
     "Ace Clubs": "AC.png",
-    "Ace Diamonds": "AD.png",
+    "Ace Diamonds": "AD.svg",
     "Ace Hearts": "AH.png",
     "Ace Spades": "AS.png",
 }
